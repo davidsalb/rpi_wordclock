@@ -72,7 +72,7 @@ class wordclock:
                     print('Skipping plugin ' + plugin + ' since it is set to activate=false in the config-file.')
                     continue
             except:
-                print('  INFO: No activate-flag set for plugin ' + plugin + ' within the config-file. Will be imported.')
+                print('INFO: No activate-flag set for plugin ' + plugin + ' within the config-file. Will be imported.')
 
             try:
                 # Perform a minimal (!) validity check
@@ -111,8 +111,8 @@ class wordclock:
         """
 
         try:
-	    print('Running plugin ' + self.plugins[self.plugin_index].name + '.')
-	    self.plugins[self.plugin_index].run(self.wcd, self.wci)
+            print('Running plugin ' + self.plugins[self.plugin_index].name + '.')
+            self.plugins[self.plugin_index].run(self.wcd, self.wci)
         except:
             print('ERROR: In plugin ' + self.plugins[self.plugin_index].name + '.')
             self.wcd.setImage(os.path.join(self.pathToGeneralIcons, 'error.png'))
